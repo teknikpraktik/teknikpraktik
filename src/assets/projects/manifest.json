@@ -1,0 +1,52 @@
+{
+  "bbs": {
+    "kind": "screenshot",
+    "origin": "live",
+    "captured": "2026-11-11"
+  },
+  "game-of-life": {
+    "kind": "screenshot",
+    "origin": "live",
+    "captured": "2026-11-11"
+  },
+  "japan-for-dummies": {
+    "kind": "screenshot",
+    "origin": "live",
+    "captured": "2026-11-11"
+  },
+  "labyrintlab": {
+    "kind": "screenshot",
+    "origin": "live",
+    "captured": "2026-11-11"
+  },
+  "solo-survival": {
+    "kind": "screenshot",
+    "origin": "local",
+    "captured": "2026-11-11"
+  },
+  "spiderman-workout": {
+    "kind": "screenshot",
+    "origin": "live",
+    "captured": "2026-11-11"
+  },
+  "svinstark": {
+    "kind": "screenshot",
+    "origin": "live",
+    "captured": "2026-11-11"
+  },
+  "vector-rally": {
+    "kind": "screenshot",
+    "origin": "live",
+    "captured": "2026-11-11"
+  },
+  "wxgeek": {
+    "kind": "screenshot",
+    "origin": "local",
+    "captured": "2026-11-11"
+  },
+  "zombies": {
+    "kind": "screenshot",
+    "origin": "local",
+    "captured": "2026-11-11"
+  }
+}

@@ -1,0 +1,37 @@
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories li + li::before {
+  content: "·";
+  margin-inline: 0.5em;
+  color: var(--rule-strong);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+
+.status[data-status="no-demo"] .dot {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--ink-muted);
+}

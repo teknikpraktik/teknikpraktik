@@ -1,0 +1,26 @@
+.footer {
+  border-top: 1px solid var(--rule);
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  min-height: 5rem;
+  padding-block: 1rem;
+}
+
+.inner a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  text-underline-offset: 0.3em;
+}
+
+.inner a:hover {
+  color: var(--ink);
+}

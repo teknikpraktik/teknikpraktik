@@ -1,0 +1,53 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.primary {
+  gap: 0.5rem;
+  padding: 0 1.125rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+  transition: background-color var(--fast) var(--ease);
+}
+
+.primary:hover {
+  background: var(--accent-strong);
+}
+
+.arrow {
+  font-family: var(--font-sans-stack);
+  transition: transform var(--fast) var(--ease);
+}
+
+.primary:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+.secondary {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 0.4em;
+  transition:
+    color var(--fast) var(--ease),
+    text-decoration-color var(--fast) var(--ease);
+}
+
+.secondary:hover {
+  color: var(--ink);
+  text-decoration-color: var(--accent);
+}

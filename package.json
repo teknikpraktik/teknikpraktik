@@ -1,0 +1,35 @@
+{
+  "name": "teknikpraktik",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "playwright test --trace off",
+    "test:a11y": "playwright test --trace off tests/a11y.spec.ts",
+    "thumbnails": "node scripts/thumbnails/capture.mjs",
+    "brand": "node scripts/brand/generate.mjs",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "check": "npm run lint && npm run typecheck && npm run build && npm test"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "lighthouse": "13.6.0",
+    "sharp": "0.35.5",
+    "typescript": "^5"
+  }
+}
