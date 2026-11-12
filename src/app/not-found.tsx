@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import styles from "./not-found.module.css";
 
 export const metadata: Metadata = {
@@ -13,9 +14,9 @@ export default function NotFound() {
       <h1 className={styles.title}>Sidan finns inte.</h1>
       <p className={styles.text}>Adressen kan vara felskriven eller så har sidan flyttats.</p>
       <p>
-        <a className={styles.link} href="/">
+        <Link className={styles.link} href="/">
           Till startsidan
-        </a>
+        </Link>
       </p>
     </main>
   );

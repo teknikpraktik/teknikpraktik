@@ -166,7 +166,10 @@ button {
   left: var(--gutter);
   top: 0.75rem;
   z-index: 100;
-  padding: 0.625rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 1rem;
   background: var(--ink);
   color: var(--paper);
   font-size: var(--text-sm);

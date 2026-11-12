@@ -12,7 +12,15 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    ".cache/**",
+    "reports/**",
+    "test-results/**",
   ]),
+  {
+    // Recepten för projektbilder exporterar ett objekt direkt, vilket är avsikten.
+    files: ["scripts/thumbnails/recipes/*.mjs"],
+    rules: { "import/no-anonymous-default-export": "off" },
+  },
 ]);
 
 export default eslintConfig;
