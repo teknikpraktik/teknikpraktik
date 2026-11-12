@@ -68,7 +68,7 @@ export const projects: Project[] = [
     description:
       "Turbaserat racingspel för en till fyra spelare på samma skärm. Varje drag ändrar bilens hastighet ett steg, så det gäller att bromsa före kurvan.",
     featuredText:
-      "Papper-och-penna-spelet som webbapp. Bilen har en hastighetsvektor, och varje tur väljer spelaren en av nio accelerationer. Den som kör av banan snurrar och tappar fyra turer. Det finns sex banor och en generator som slumpar fram nya.",
+      "Papper-och-penna-spelet som webbapp. Bilen har en hastighetsvektor, och i varje drag väljer spelaren en av nio accelerationer. Den som kör av banan snurrar och står över fyra drag. Det finns sex banor och en generator som slumpar fram nya.",
     categories: ["spel", "larande"],
     status: "live",
     url: "https://vector-rally.vercel.app/",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
   {
     slug: "japan-for-dummies",
     name: "Japan for Dummies",
-    tagline: "Självstudier inför skolresan till Japan",
+    tagline: "Självstudier inför en skolresa till Japan",
     description:
       "Kurs på svenska i korta kapitel med text, kartor, övningar och test om Japans geografi, historia, vardag och språk. Framstegen sparas i webbläsaren.",
     categories: ["resa", "larande"],
@@ -135,7 +135,7 @@ export const projects: Project[] = [
   {
     slug: "wxgeek",
     name: "WXGEEK",
-    tagline: "Observation, nu och prognos på samma tidslinje",
+    tagline: "Observationer och prognos på samma tidslinje",
     description:
       "Väderapp för Sverige som visar de senaste tolv timmarnas observationer och det kommande dygnets prognos på en tidsaxel, med data från METAR, TAF och SMHI.",
     categories: ["vader"],
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     name: "BBS – Body by Science",
     tagline: "Fem maskinövningar, ett set vardera",
     description:
-      "Tar tid på passets fem set om högst 90 sekunder och sparar vikten du slutade på. Utvecklingen visas som diagram, och allt lagras på din enhet.",
+      "Tar tid på varje set, högst 90 sekunder, och sparar vikten du slutade på. Utvecklingen visas som diagram, och allt lagras på din enhet.",
     categories: ["traning"],
     status: "live",
     url: "https://bbs-gamma-smoky.vercel.app/",

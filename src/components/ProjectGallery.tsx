@@ -32,7 +32,11 @@ export function ProjectGallery({ projects, categories }: Props) {
 
   return (
     <div>
-      <div className={styles.toolbar}>
+      {/* Utan JavaScript kan filtren inte fungera. Då visas alla projekt och verktygsraden döljs. */}
+      <noscript>
+        <style>{"[data-filter-toolbar]{display:none}"}</style>
+      </noscript>
+      <div className={styles.toolbar} data-filter-toolbar>
         <div className={styles.filters} role="group" aria-label="Filtrera projekt efter kategori">
           {options.map((option) => (
             <button

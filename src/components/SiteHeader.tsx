@@ -7,7 +7,7 @@ export function SiteHeader() {
       <div className={`container ${styles.inner}`}>
         <a href="#top" className={styles.brand} aria-label={`${site.name}, till sidans början`}>
           <span className={styles.mark} aria-hidden="true" />
-          <span>teknikpraktik</span>
+          <span className={styles.word}>teknikpraktik</span>
         </a>
         <nav aria-label="Huvudmeny">
           <ul className={styles.nav}>

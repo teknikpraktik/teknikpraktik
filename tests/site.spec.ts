@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { categories, featuredProjects, projects } from "../src/data/test-data";
 
-const widths = [375, 768, 1440] as const;
+const widths = [320, 375, 768, 1440, 1920] as const;
 
 test.describe("innehåll", () => {
   test("alla projekt har ett kort med namn, beskrivning, bild och kategori", async ({ page }) => {
@@ -59,8 +59,12 @@ test.describe("innehåll", () => {
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
     await expect(page.getByRole("heading", { level: 1 })).toContainText("digitala verktyg");
-    await expect(page.getByRole("heading", { name: "Om Per" })).toBeVisible();
-    await expect(page.getByTestId("contact-link")).toHaveAttribute("href", "https://github.com/teknikpraktik");
+    await expect(page.getByRole("heading", { name: "Om mig" })).toBeVisible();
+    await expect(page.getByTestId("contact-link")).toHaveAttribute(
+      "href",
+      "https://github.com/teknikpraktik/teknikpraktik/issues/new",
+    );
+    await expect(page.getByTestId("profile-link")).toHaveAttribute("href", "https://github.com/teknikpraktik");
   });
 });
 
@@ -140,6 +144,8 @@ test.describe("navigation", () => {
       expect(outline.width).toBeGreaterThanOrEqual(2);
     }
     expect(await page.locator("figure a").evaluateAll((els) => els.every((el) => el.getAttribute("tabindex") === "-1"))).toBe(true);
+    // Bilderna och deras alt-texter är inte dolda för skärmläsare.
+    expect(await page.locator("figure img").evaluateAll((els) => els.every((el) => !el.closest("[aria-hidden]") && el.getAttribute("alt")))).toBe(true);
   });
 });
 
@@ -193,13 +199,27 @@ test.describe("responsivt", () => {
     });
   }
 
+  test("sidan flödar om vid 200 % förstoring", async ({ page }) => {
+    await page.setViewportSize({ width: 640, height: 800 });
+    await page.goto("/");
+    await page.evaluate(() => {
+      document.documentElement.style.fontSize = "200%";
+    });
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(0);
+  });
+
   test("pekytor är minst 44 px höga på mobil", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto("/");
     const small = await page.locator("a[href]:not([tabindex='-1']):visible, button:visible").evaluateAll((els) =>
       els
-        .map((el) => ({ h: el.getBoundingClientRect().height, text: el.textContent?.trim().slice(0, 30) }))
-        .filter((x) => x.h < 44),
+        .filter((el) => !el.closest("p")?.textContent?.includes("Ärendet blir offentligt"))
+        .map((el) => {
+          const r = el.getBoundingClientRect();
+          return { h: r.height, w: r.width, text: el.textContent?.trim().slice(0, 30) };
+        })
+        .filter((x) => x.h < 44 || x.w < 44),
     );
     expect(small).toEqual([]);
   });
@@ -258,6 +278,15 @@ test.describe("teknik", () => {
     const og = await request.get("/opengraph-image.png");
     expect(og.ok()).toBe(true);
     expect(og.headers()["content-type"]).toContain("image/png");
+  });
+
+  test("utan JavaScript visas alla projekt och inga overksamma filter", async ({ browser }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    const page = await context.newPage();
+    await page.goto("/");
+    await expect(page.getByTestId("project-card")).toHaveCount(projects.length);
+    await expect(page.locator("[data-filter-toolbar]")).toBeHidden();
+    await context.close();
   });
 
   test("okänd adress ger 404-sidan", async ({ page }) => {

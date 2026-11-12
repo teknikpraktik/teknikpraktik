@@ -5,8 +5,10 @@ Intern arbetsdokumentation. Visas inte på webbplatsen.
 ## Innehåll
 
 - **Kontaktväg.** Ingen offentlig e-postadress har kunnat verifieras som avsedd för
-  publicering. GitHub-profilen (github.com/teknikpraktik) används tills vidare. Byts i
-  `src/data/site.ts`.
+  publicering. Kontaktlänken öppnar därför ett nytt ärende i webbplatsens repo på GitHub,
+  med en länk till profilen bredvid. Det kräver ett GitHub-konto och ärendet blir
+  offentligt, vilket sidan säger rakt ut. Det är en nödlösning: en e-postadress vore bättre
+  för skolor och samarbetspartner. Byts i `src/data/site.ts` och `Contact.tsx`.
 - **Texten om Per** bygger enbart på uppgifterna i uppdraget: tekniklärare,
   civilingenjörsbakgrund, tidigare trafikflygare. Inga arbetsgivare, årtal eller meriter är
   tillagda. Formuleringarna bör läsas igenom av Per.
@@ -41,3 +43,18 @@ Intern arbetsdokumentation. Visas inte på webbplatsen.
 - Typsnitten ligger i repot. Inga anrop till andra tjänster vid sidladdning.
 - Projektbilderna importeras statiskt, så bygget faller om en bild saknas.
 - `next/image` levererar AVIF/WebP i rätt storlek med reserverade mått.
+
+## Granskning
+
+En oberoende agent granskade skärmdumpar från mobil och desktop samt funktion, text och
+tillgänglighet (varv 1). Åtgärdat: kontaktvägen, alt-texter dolda för skärmläsare,
+horisontell scroll vid 320 px och vid förstoring, overksamma filter utan JavaScript,
+genomskinligt sidhuvud, tomrum på kort utan länkar, upprepningar och klumpiga formuleringar,
+beskärningen av två projektbilder.
+
+Inte åtgärdat, med avsikt:
+
+- De tre utvalda projekten finns även i galleriet. Uppdraget kräver ett galleri med
+  samtliga tio, och filtren ska kunna visa alla projekt i en kategori.
+- Sex appar har engelskt gränssnitt, vilket syns i bilderna. Bilderna visar apparna som
+  de är.

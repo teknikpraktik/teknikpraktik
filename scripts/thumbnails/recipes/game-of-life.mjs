@@ -4,6 +4,8 @@ export default {
   slug: "game-of-life",
   name: "Game of Life Lab",
   device: "desktop",
+  // Mindre vy i 16:10, så att rutnätet och gliderna blir större i bilden.
+  viewport: { width: 1152, height: 720 },
   url: "https://gameoflife-sandy-tau.vercel.app/",
   async prepare(page) {
     await page.locator("#tabLogic").click({ timeout: 15_000 });

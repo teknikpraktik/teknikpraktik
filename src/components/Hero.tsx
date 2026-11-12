@@ -20,9 +20,8 @@ export function Hero() {
         <div className={styles.lower}>
           <div className={styles.intro}>
             <p className={styles.lead}>
-              Jag heter Per Björkman och är tekniklärare med bakgrund som civilingenjör och trafikflygare. Här
-              samlar jag {count} webbappar: labb för klassrummet, spel som spelas utomhus och appar för träning,
-              väder och resor.
+              Jag heter Per Björkman och är tekniklärare. Här samlar jag {count} webbappar som jag har byggt:
+              labb och kurser för undervisning, spel, träningsappar och en väderapp.
             </p>
             <p className={styles.actions}>
               <a className={styles.primary} href="#projekt">

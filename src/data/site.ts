@@ -16,9 +16,11 @@ export const site = {
    * GitHub-profilen tills vidare. Se docs/internal/beslut.md.
    */
   contact: {
-    label: "GitHub",
-    handle: "github.com/teknikpraktik",
-    url: "https://github.com/teknikpraktik",
+    /** Öppnar ett nytt ärende i webbplatsens repo. Kräver ett GitHub-konto. */
+    label: "Skriv till mig på GitHub",
+    url: "https://github.com/teknikpraktik/teknikpraktik/issues/new",
+    profileLabel: "github.com/teknikpraktik",
+    profileUrl: "https://github.com/teknikpraktik",
   },
 } as const;
 

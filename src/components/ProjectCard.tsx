@@ -18,9 +18,11 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className={styles.tagline}>{project.tagline}</p>
         <p className={styles.description}>{project.description}</p>
       </div>
-      <div className={styles.footer}>
-        <ProjectLinks project={project} />
-      </div>
+      {project.url || project.sourceUrl ? (
+        <div className={styles.footer}>
+          <ProjectLinks project={project} />
+        </div>
+      ) : null}
     </article>
   );
 }

@@ -28,7 +28,7 @@ const structuredData = {
       name: site.author,
       url: site.url,
       jobTitle: "Tekniklärare",
-      sameAs: [site.contact.url],
+      sameAs: [site.contact.profileUrl],
     },
   ],
 };

@@ -60,6 +60,11 @@ export default {
     await page.locator("#load-state").click();
     await page.locator("#debug-note", { hasText: "Loaded" }).waitFor({ timeout: 5000 });
     await page.locator("details.tools summary").click(); // stäng debug-panelen
+    // Dra banan uppåt så att bilarna hamnar mitt i bilden i stället för under tomt papper.
+    await page.mouse.move(1100, 300);
+    await page.mouse.down();
+    await page.mouse.move(1100, 110, { steps: 12 });
+    await page.mouse.up();
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.mouse.move(5, 5);
     await page.waitForTimeout(500);

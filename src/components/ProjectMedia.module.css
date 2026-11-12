@@ -3,6 +3,7 @@
 }
 
 .frame {
+  position: relative;
   display: block;
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -19,7 +20,12 @@
   transition: transform var(--slow) var(--ease);
 }
 
-a.frame:hover .image {
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.frame:has(.overlay:hover) .image {
   transform: scale(1.015);
 }
 

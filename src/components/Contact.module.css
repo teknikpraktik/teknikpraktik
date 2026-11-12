@@ -20,10 +20,33 @@
   gap: 0.35em;
   min-height: 2.75rem;
   font-family: var(--font-display-stack);
-  font-size: clamp(1.5rem, 3.4vw + 0.7rem, 3.5rem);
+  font-size: clamp(1.5rem, 1.6vw + 1.1rem, 2.5rem);
   line-height: 1.1;
   letter-spacing: -0.022em;
   text-decoration: none;
+}
+
+.actions {
+  display: grid;
+  gap: 1rem;
+}
+
+.note {
+  max-width: 30rem;
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+}
+
+.note a {
+  display: inline-block;
+  padding-block: 0.75rem;
+  color: var(--ink-soft);
+  text-decoration-color: var(--rule-strong);
+}
+
+.note a:hover {
+  color: var(--ink);
+  text-decoration-color: var(--accent);
 }
 
 .handle {

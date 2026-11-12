@@ -31,5 +31,4 @@
 /* Länkraden hamnar längst ned så att korten i en rad linjerar. */
 .footer {
   margin-top: auto;
-  min-height: 2.75rem;
 }
